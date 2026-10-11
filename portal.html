@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Portal &amp; Management | ODD FITNESS</title>
+  <meta name="description" content="Odd Fitness Client & Admin Portal - Manage workouts, nutrition blueprints, brand collaborations, and account security.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800;900&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="portal-page">
+
+  <!-- Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="navbar header-nav">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-title">ODD<span>FITNESS</span></span>
+      </a>
+
+      <!-- Header Navigation in the middle -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="building-strength.html" class="nav-link">BUILDING STRENGTH</a>
+        <a href="workouts.html" class="nav-link">WORKOUT LIBRARY</a>
+        <a href="nutrition.html" class="nav-link">NUTRITIONS &amp; DIET</a>
+        <a href="collaborations.html" class="nav-link">COLLABORATIONS</a>
+        <div class="mobile-nav-login-wrap">
+          <a href="portal.html" class="btn-mobile-nav-login" id="mobileNavLoginBtn">
+            <span class="login-icon">🔒</span>
+            <span class="login-text">LOGIN</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Right Corner: Portal / User Status -->
+      <div class="header-right-actions">
+        <a href="portal.html" class="btn-header-login active-user" id="headerLoginBtn">
+          <span class="login-icon">🔒</span>
+          <span class="login-text" id="headerLoginText">LOGIN</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+          <span>☰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 3rem 0 5rem;">
+    <div class="container">
+
+      <!-- ======================================================================
+           STATE 1: LOGIN SECTION (Shown when not authenticated)
+           ====================================================================== -->
+      <div id="portalLoginSection" class="portal-login-wrap">
+        <div class="portal-login-card">
+          <div class="portal-login-badge">
+            <span>🛡️</span>
+          </div>
+          <span class="brush-script red-accent" style="font-size: 1.8rem; display: block; margin-bottom: 0.2rem;">Client Authentication</span>
+          <h1 class="title-condensed" style="font-size: 2.8rem; margin-bottom: 0.8rem; color: #fff;">PORTAL ACCESS</h1>
+          <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;">
+            Log in to manage workout movements, nutrition blueprints, verified collaborations, and security credentials.
+          </p>
+
+          <form id="portalLoginForm" class="portal-form">
+            <div class="portal-field">
+              <label for="portalUser">Client Name / Username</label>
+              <input type="text" id="portalUser" placeholder="Enter your name" value="Admin" required autocomplete="username">
+            </div>
+
+            <div class="portal-field">
+              <label for="portalPassword">Security Password</label>
+              <div class="password-input-wrap">
+                <input type="password" id="portalPassword" placeholder="Enter security password" value="odd2026" required autocomplete="current-password">
+                <button type="button" class="btn-toggle-password" id="toggleLoginPasswordBtn" aria-label="Toggle password visibility">
+                  <span id="loginPasswordEyeIcon">👁️</span>
+                </button>
+              </div>
+              <span class="password-hint">Click the eye icon to make password visible</span>
+            </div>
+
+            <div class="portal-quick-creds" id="quickCredsPill" title="Click to autofill and login">
+              <span>Demo Access:</span> <strong>User:</strong> Admin &bull; <strong>Password:</strong> odd2026 <em>(Click to autofill)</em>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem;">
+              <button type="submit" class="btn-hero-red" id="btnSubmitLogin" style="width: 100%; justify-content: center; padding: 0.9rem; font-size: 1.1rem;">
+                ENTER PORTAL <span>&rarr;</span>
+              </button>
+              <button type="button" id="btnOneClickLogin" class="btn-cancel" style="width: 100%; justify-content: center; padding: 0.75rem; font-weight: 700; border: 1px solid rgba(255,43,43,0.3); background: rgba(255,43,43,0.1); color: #fff;">
+                ⚡ ONE-CLICK INSTANT LOGIN
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- ======================================================================
+           STATE 2: MANAGEMENT DASHBOARD (Shown when authenticated)
+           ====================================================================== -->
+      <div id="portalDashboardSection" class="portal-dashboard-wrap" style="display: none;">
+        
+        <!-- Dashboard Top Bar -->
+        <div class="portal-dash-header">
+          <div>
+            <span class="brush-script red-accent" style="font-size: 2rem;">Authenticated Management</span>
+            <h1 class="title-condensed" style="font-size: 3.2rem; color: #fff; line-height: 1;">
+              WELCOME, <span id="dashClientNameTitle" class="red-accent">ADMIN</span>
+            </h1>
+            <p style="color: #94a3b8; font-size: 0.95rem; margin-top: 0.35rem;">
+              Full administrative control for Workouts, Nutrition Protocols, Brand Collaborations &amp; Security.
+            </p>
+          </div>
+          <div class="portal-dash-actions">
+            <a href="index.html" class="portal-action-btn secondary"><span>🌐</span> Live Website</a>
+            <button type="button" class="portal-action-btn danger" id="portalLogoutBtn"><span>🚪</span> Log Out</button>
+          </div>
+        </div>
+
+        <!-- Metrics Overview Bar -->
+        <div class="portal-stats-quad">
+          <div class="portal-stat-pill">
+            <span class="p-stat-lbl">Active Workouts</span>
+            <div class="p-stat-val" id="statWorkoutsCount">6</div>
+            <span class="p-stat-sub">Movement Library</span>
+          </div>
+          <div class="portal-stat-pill">
+            <span class="p-stat-lbl">Nutrition Protocols</span>
+            <div class="p-stat-val" id="statNutritionCount">3</div>
+            <span class="p-stat-sub">Meal Blueprints</span>
+          </div>
+          <div class="portal-stat-pill">
+            <span class="p-stat-lbl">Official Collabs</span>
+            <div class="p-stat-val" id="statCollabsCount">7</div>
+            <span class="p-stat-sub">Brand Showcases</span>
+          </div>
+          <div class="portal-stat-pill highlight">
+            <span class="p-stat-lbl">Security Status</span>
+            <div class="p-stat-val" style="font-size: 1.8rem; color: #22c55e;">ACTIVE</div>
+            <span class="p-stat-sub">Password Protected</span>
+          </div>
+        </div>
+
+        <!-- Dashboard Navigation Tabs -->
+        <div class="portal-nav-tabs">
+          <button class="portal-tab-btn active" data-tab="tabWorkouts">
+            <span>🏋️</span> WORKOUT LIBRARY
+          </button>
+          <button class="portal-tab-btn" data-tab="tabNutrition">
+            <span>🥗</span> NUTRITIONS &amp; DIET
+          </button>
+          <button class="portal-tab-btn" data-tab="tabCollabs">
+            <span>🤝</span> COLLABORATIONS
+          </button>
+          <button class="portal-tab-btn" data-tab="tabSecurity">
+            <span>🛡️</span> SECURITY &amp; PASSWORD
+          </button>
+        </div>
+
+        <!-- ==================================================================
+             TAB 1: WORKOUT LIBRARY MANAGER
+             ================================================================== -->
+        <section class="portal-tab-panel active" id="tabWorkouts">
+          <div class="panel-header-row">
+            <div>
+              <h3 class="panel-section-title">WORKOUT MOVEMENTS</h3>
+              <p class="panel-section-sub">Add or delete exercises shown in the Workout Library.</p>
+            </div>
+            <button class="btn-hero-red" id="toggleAddWorkoutBtn">
+              <span>+</span> ADD NEW WORKOUT
+            </button>
+          </div>
+
+          <!-- Add Workout Form (Collapsible) -->
+          <div class="portal-add-form-box" id="addWorkoutBox" style="display: none;">
+            <h4 class="form-box-title" id="workoutFormTitle">Create New Workout</h4>
+            <form id="addWorkoutForm" class="grid-form-2">
+              <input type="hidden" id="editWorkoutId" value="">
+              <div class="portal-field">
+                <label for="workoutTitle">Workout Name / Title *</label>
+                <input type="text" id="workoutTitle" placeholder="e.g. OLYMPIC CLEAN &amp; JERK" required>
+              </div>
+              <div class="portal-field">
+                <label for="workoutSubtitle">Subtitle / Discipline</label>
+                <input type="text" id="workoutSubtitle" placeholder="e.g. Explosive Power &amp; Triple Extension">
+              </div>
+              <div class="portal-field">
+                <label for="workoutCategory">Category *</label>
+                <select id="workoutCategory" required>
+                  <option value="strength">Strength &amp; Power</option>
+                  <option value="cardio">Cardio &amp; Cycle</option>
+                  <option value="crossfit">CrossFit &amp; HIIT</option>
+                  <option value="mobility">Mind &amp; Mobility</option>
+                </select>
+              </div>
+              <div class="portal-field">
+                <label for="workoutTarget">Target Muscle Groups</label>
+                <input type="text" id="workoutTarget" placeholder="e.g. Posterior Chain, Delts, Core">
+              </div>
+              <div class="portal-field">
+                <label for="workoutLevel">Recommended Level</label>
+                <select id="workoutLevel">
+                  <option value="Advanced Athlete">Advanced Athlete</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="All Levels">All Levels</option>
+                </select>
+              </div>
+              <div class="portal-field">
+                <label for="workoutScheme">Prescribed Scheme</label>
+                <input type="text" id="workoutScheme" placeholder="e.g. 5 Sets &times; 3 Reps (RPE 8.5)">
+              </div>
+              <div class="portal-field full-width">
+                <label for="workoutCues">Technique Cues (One per line)</label>
+                <textarea id="workoutCues" rows="3" placeholder="Retract scapulae before pulling&#10;Drive through whole foot&#10;Lock out aggressively overhead"></textarea>
+              </div>
+
+              <!-- Workout Image Option (File Upload / URL / Presets with Live Preview) -->
+              <div class="portal-field full-width image-upload-field">
+                <label>Workout Movement Photo / Image Option *</label>
+                <div class="image-upload-controls">
+                  <div class="file-picker-wrap">
+                    <label for="workoutImgFile" class="custom-file-upload-btn">
+                      <span>📷</span> UPLOAD PHOTO FROM DEVICE
+                    </label>
+                    <input type="file" id="workoutImgFile" accept="image/*" style="display: none;">
+                    <span class="file-selected-name" id="workoutFileName">No file selected (or enter URL / choose preset below)</span>
+                  </div>
+                  <div class="url-preset-row">
+                    <input type="text" id="workoutImgUrl" placeholder="Or enter Image URL / path (e.g. assets/images/strength-endurance.jpg)" class="input-img-url">
+                    <select id="workoutImgPreset" class="select-img-preset">
+                      <option value="">-- Choose Existing Workout Photo --</option>
+                      <option value="assets/images/strength-endurance.jpg">Strength &amp; Endurance (Barbell &amp; Rings)</option>
+                      <option value="assets/images/indoor-cycle.jpg">Indoor Cycle (Smart Trainer)</option>
+                      <option value="assets/images/high-intensity.jpg">High Intensity (HIIT &amp; Slams)</option>
+                      <option value="assets/images/mind-body.jpg">Mind &amp; Body Mobility (Ashtanga / Yoga)</option>
+                      <option value="assets/images/crossfit-workout.jpg">CrossFit Workout (Battle Ropes)</option>
+                      <option value="assets/images/whole-body.jpg">Whole Body Conditioning (Kettlebells)</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- Live Preview Box -->
+                <div class="portal-img-preview-box" id="workoutImgPreviewBox" style="display: none;">
+                  <div class="preview-inner">
+                    <img id="workoutPreviewImg" src="" alt="Workout Preview">
+                    <div class="preview-meta">
+                      <span class="preview-badge">✓ PHOTO ATTACHED</span>
+                      <span class="preview-dim" id="workoutPreviewDim">Live Workout Showcase Preview</span>
+                      <button type="button" class="btn-clear-img" id="btnClearWorkoutImg">✕ Remove Photo</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions-row full-width">
+                <button type="submit" class="btn-hero-red" id="btnSaveWorkout">SAVE WORKOUT</button>
+                <button type="button" class="btn-cancel" id="cancelWorkoutBtn">Cancel</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Existing Workouts List -->
+          <div class="portal-items-list" id="portalWorkoutsList">
+            <!-- Dynamically populated -->
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             TAB 2: NUTRITION & DIET MANAGER
+             ================================================================== -->
+        <section class="portal-tab-panel" id="tabNutrition">
+          <div class="panel-header-row">
+            <div>
+              <h3 class="panel-section-title">NUTRITION BLUEPRINTS</h3>
+              <p class="panel-section-sub">Add or delete curated meal protocols shown in Nutrition &amp; Diet.</p>
+            </div>
+            <button class="btn-hero-red" id="toggleAddDietBtn">
+              <span>+</span> ADD NEW BLUEPRINT
+            </button>
+          </div>
+
+          <!-- Add Diet Form (Collapsible) -->
+          <div class="portal-add-form-box" id="addDietBox" style="display: none;">
+            <h4 class="form-box-title" id="dietFormTitle">Create New Nutrition Blueprint</h4>
+            <form id="addDietForm" class="grid-form-2">
+              <input type="hidden" id="editDietId" value="">
+              <div class="portal-field">
+                <label for="dietName">Protocol Name *</label>
+                <input type="text" id="dietName" placeholder="e.g. KETOGENIC SHREDDER" required>
+              </div>
+              <div class="portal-field">
+                <label for="dietPill">Category Pill *</label>
+                <input type="text" id="dietPill" placeholder="e.g. HIGH FAT / LOW CARB" required>
+              </div>
+              <div class="portal-field full-width">
+                <label for="dietDesc">Description *</label>
+                <textarea id="dietDesc" rows="2" placeholder="Optimized for rapid ketosis, cognitive sharpness, and preserving lean tissue in deficit." required></textarea>
+              </div>
+              <div class="portal-field">
+                <label for="dietBreakfast">Breakfast Item</label>
+                <input type="text" id="dietBreakfast" placeholder="e.g. 4 Whole Eggs, Avocado &amp; Spinach">
+              </div>
+              <div class="portal-field">
+                <label for="dietLunch">Lunch Item</label>
+                <input type="text" id="dietLunch" placeholder="e.g. 220g Ribeye Steak, Grass-Fed Butter &amp; Asparagus">
+              </div>
+              <div class="portal-field">
+                <label for="dietSnack">Pre/Post Item</label>
+                <input type="text" id="dietSnack" placeholder="e.g. Macadamia Nuts &amp; Electrolytes">
+              </div>
+              <div class="portal-field">
+                <label for="dietDinner">Dinner Item</label>
+                <input type="text" id="dietDinner" placeholder="e.g. Wild Salmon, Olive Oil, Mixed Greens">
+              </div>
+
+              <!-- Nutrition Photo / Meal Guide Upload Option ("udolde button") -->
+              <div class="portal-field full-width image-upload-field">
+                <label>Nutrition Protocol Photo / Meal Guide Upload *</label>
+                <div class="image-upload-controls">
+                  <div class="file-picker-wrap">
+                    <label for="dietImgFile" class="custom-file-upload-btn">
+                      <span>🥗</span> UPLOAD MEAL PHOTO FROM DEVICE
+                    </label>
+                    <input type="file" id="dietImgFile" accept="image/*" style="display: none;">
+                    <span class="file-selected-name" id="dietFileName">No file selected (or enter URL / choose preset below)</span>
+                  </div>
+                  <div class="url-preset-row">
+                    <input type="text" id="dietImgUrl" placeholder="Or enter Meal Image URL / path..." class="input-img-url">
+                    <select id="dietImgPreset" class="select-img-preset">
+                      <option value="">-- Choose Existing Nutrition Photo --</option>
+                      <option value="assets/images/nutrition-diet.jpg">Nutrition Lab Main Showcase</option>
+                      <option value="assets/images/collab-zsk-oats.png">High Protein Dark Chocolate Oats</option>
+                      <option value="assets/images/collab-gymelt.png">Gymelt Belgian Chocolate Shake</option>
+                      <option value="assets/images/collab-cleancrate.png">Clean Crate Natural Whole Oats</option>
+                      <option value="assets/images/collab-zsk-products.jpg">Athlete Power Recovery Bundle</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- Live Preview Box -->
+                <div class="portal-img-preview-box" id="dietImgPreviewBox" style="display: none;">
+                  <div class="preview-inner">
+                    <img id="dietPreviewImg" src="" alt="Diet Blueprint Preview">
+                    <div class="preview-meta">
+                      <span class="preview-badge">✓ MEAL PHOTO ATTACHED</span>
+                      <span class="preview-dim" id="dietPreviewDim">Live Nutrition Protocol Preview</span>
+                      <button type="button" class="btn-clear-img" id="btnClearDietImg">✕ Remove Photo</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions-row full-width">
+                <button type="submit" class="btn-hero-red" id="btnSaveDiet">SAVE BLUEPRINT</button>
+                <button type="button" class="btn-cancel" id="cancelDietBtn">Cancel</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Existing Diet Blueprints List -->
+          <div class="portal-items-list" id="portalDietList">
+            <!-- Dynamically populated -->
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             TAB 3: COLLABORATIONS MANAGER
+             ================================================================== -->
+        <section class="portal-tab-panel" id="tabCollabs">
+          <div class="panel-header-row">
+            <div>
+              <h3 class="panel-section-title">BRAND COLLABORATIONS</h3>
+              <p class="panel-section-sub">Add or delete official brand partnerships and athlete showcases.</p>
+            </div>
+            <button class="btn-hero-red" id="toggleAddCollabBtn">
+              <span>+</span> ADD NEW COLLABORATION
+            </button>
+          </div>
+
+          <!-- Add Collab Form (Collapsible) -->
+          <div class="portal-add-form-box" id="addCollabBox" style="display: none;">
+            <h4 class="form-box-title" id="collabFormTitle">Create New Collaboration Showcase</h4>
+            <form id="addCollabForm" class="grid-form-2">
+              <input type="hidden" id="editCollabId" value="">
+              <div class="portal-field">
+                <label for="collabBrandName">Brand Name *</label>
+                <input type="text" id="collabBrandName" placeholder="e.g. APEX GEAR" required>
+              </div>
+              <div class="portal-field">
+                <label for="collabCategory">Category Pill *</label>
+                <input type="text" id="collabCategory" placeholder="e.g. ATHLETIC ACCESSORIES" required>
+              </div>
+              <div class="portal-field full-width">
+                <label for="collabProduct">Product Highlight *</label>
+                <input type="text" id="collabProduct" placeholder="e.g. Heavy Duty Lifting Straps &amp; Wrist Wraps" required>
+              </div>
+              <div class="portal-field">
+                <label for="collabCode">Promo Code / Tag</label>
+                <input type="text" id="collabCode" placeholder="e.g. ODD10">
+              </div>
+              <div class="portal-field">
+                <label for="collabStoreLink">Website Link</label>
+                <input type="url" id="collabStoreLink" placeholder="https://apexgear.com">
+              </div>
+              <div class="portal-field">
+                <label for="collabHandle">Instagram Handle</label>
+                <input type="text" id="collabHandle" placeholder="@apexgear_official">
+              </div>
+              <!-- Collaboration Showcase Image Option (File Upload / URL / Presets with Live Preview) -->
+              <div class="portal-field full-width image-upload-field">
+                <label>Showcase Photo / Image Option *</label>
+                <div class="image-upload-controls">
+                  <div class="file-picker-wrap">
+                    <label for="collabImgFile" class="custom-file-upload-btn">
+                      <span>📷</span> UPLOAD SHOWCASE PHOTO FROM DEVICE
+                    </label>
+                    <input type="file" id="collabImgFile" accept="image/*" style="display: none;">
+                    <span class="file-selected-name" id="collabFileName">No file chosen (or enter URL / choose existing showcase below)</span>
+                  </div>
+                  <div class="url-preset-row">
+                    <input type="text" id="collabImgUrl" placeholder="Or enter Image URL / path (e.g. assets/images/collab-raawr.jpg or https://...)" class="input-img-url">
+                    <select id="collabImgPreset" class="select-img-preset">
+                      <option value="">-- Choose Existing Showcase Photo --</option>
+                      <option value="assets/images/collab-raawr.jpg">Raawr Tee Story (Oversized Tee)</option>
+                      <option value="assets/images/collab-coitonic.png">Coitonic Compression Sportswear</option>
+                      <option value="assets/images/collab-gymelt.png">Gymelt Ice Cream &amp; Shake</option>
+                      <option value="assets/images/collab-slovic.png">Slovic Doorway Pull-up Bar</option>
+                      <option value="assets/images/collab-zsk-oats.png">ZSK High Protein Dark Chocolate Oats</option>
+                      <option value="assets/images/collab-zsk-products.jpg">ZSK Athlete Bundle (Shilajit &amp; Nut Butters)</option>
+                      <option value="assets/images/collab-cleancrate.png">The Clean Crate Functional Oats Box</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- Live Preview Box -->
+                <div class="portal-img-preview-box" id="collabImgPreviewBox" style="display: none;">
+                  <div class="preview-inner">
+                    <img id="collabPreviewImg" src="" alt="Showcase Preview">
+                    <div class="preview-meta">
+                      <span class="preview-badge">✓ SHOWCASE PHOTO ATTACHED</span>
+                      <span class="preview-dim" id="collabPreviewDim">Live Collab Showcase Preview</span>
+                      <button type="button" class="btn-clear-img" id="btnClearCollabImg">✕ Remove Photo</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="portal-field full-width">
+                <label for="collabDesc">Collaboration Description *</label>
+                <textarea id="collabDesc" rows="3" placeholder="High-durability athlete lifting gear engineered for heavy singles and grip fortification." required></textarea>
+              </div>
+              <div class="form-actions-row full-width">
+                <button type="submit" class="btn-hero-red" id="btnSaveCollab">SAVE COLLABORATION</button>
+                <button type="button" class="btn-cancel" id="cancelCollabBtn">Cancel</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Existing Collabs List -->
+          <div class="portal-items-list" id="portalCollabsList">
+            <!-- Dynamically populated -->
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             TAB 4: SECURITY & CREDENTIALS MANAGER
+             ================================================================== -->
+        <section class="portal-tab-panel" id="tabSecurity">
+          <div class="panel-header-row">
+            <div>
+              <h3 class="panel-section-title">ACCOUNT SECURITY &amp; CREDENTIALS</h3>
+              <p class="panel-section-sub">Update client name, change password, and reveal active security password.</p>
+            </div>
+          </div>
+
+          <div class="portal-security-grid">
+            <!-- Credentials Update Card -->
+            <div class="security-card">
+              <h4 class="form-box-title">Change Name &amp; Password</h4>
+              <p style="color: #94a3b8; font-size: 0.88rem; margin-bottom: 1.5rem;">
+                Changes saved here will immediately protect your client portal session and update display names across the site.
+              </p>
+
+              <form id="securityUpdateForm" class="portal-form">
+                <div class="portal-field">
+                  <label for="secClientName">Client Display Name</label>
+                  <input type="text" id="secClientName" required>
+                </div>
+
+                <div class="portal-field">
+                  <label for="secNewPassword">New Password</label>
+                  <div class="password-input-wrap">
+                    <input type="password" id="secNewPassword" placeholder="Enter new password (min 4 characters)" required minlength="4">
+                    <button type="button" class="btn-toggle-password" id="toggleNewPasswordBtn" aria-label="Toggle password visibility">
+                      <span id="newPasswordEyeIcon">👁️</span>
+                    </button>
+                  </div>
+                  <span class="password-hint">Click eye icon to make password appear while typing</span>
+                </div>
+
+                <div class="portal-field">
+                  <label for="secConfirmPassword">Confirm New Password</label>
+                  <input type="password" id="secConfirmPassword" placeholder="Confirm new password" required minlength="4">
+                </div>
+
+                <button type="submit" class="btn-hero-red" style="margin-top: 1rem; width: 100%; justify-content: center;">
+                  SAVE SECURITY SETTINGS <span>✓</span>
+                </button>
+              </form>
+            </div>
+
+            <!-- Current Password Reveal Card ("the password should be appeared") -->
+            <div class="security-card" style="border-color: rgba(255, 43, 43, 0.3); background: linear-gradient(180deg, rgba(255, 43, 43, 0.05) 0%, #12151c 100%);">
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                <span style="font-size: 1.8rem;">🔑</span>
+                <div>
+                  <h4 class="form-box-title" style="margin-bottom: 0.2rem;">Active Security Credentials</h4>
+                  <span style="font-size: 0.78rem; color: #94a3b8;">Stored Client Credentials &bull; Revealed on Demand</span>
+                </div>
+              </div>
+
+              <div class="stored-creds-box">
+                <div class="stored-cred-row">
+                  <span class="cred-label">Registered Name:</span>
+                  <span class="cred-value" id="dispCurrentName">Admin</span>
+                </div>
+                <div class="stored-cred-row">
+                  <span class="cred-label">Stored Password:</span>
+                  <div class="password-display-row">
+                    <span class="cred-value password-masked" id="dispCurrentPassword">••••••••</span>
+                    <button type="button" class="btn-reveal-password" id="btnRevealStoredPassword">
+                      <span id="revealBtnText">SHOW PASSWORD 👁️</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="security-tips-box">
+                <div style="display: flex; gap: 0.6rem; align-items: flex-start;">
+                  <span style="color: var(--primary-red);">ℹ️</span>
+                  <div style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.5;">
+                    Your password can always be inspected here by pressing <strong>SHOW PASSWORD</strong> so you never lose administrative access to your workouts, nutrition, or collaborations.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Sleek Minimal Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-bottom-bar">
+        <a href="index.html" class="brand-logo footer-brand">
+          <span class="logo-title">ODD<span>FITNESS</span></span>
+        </a>
+        <div class="footer-copy">
+          &copy; 2026 ODD FITNESS. Client Administration Portal. All rights reserved.
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <span class="sep">&bull;</span>
+          <a href="workouts.html">Workouts</a>
+          <span class="sep">&bull;</span>
+          <a href="nutrition.html">Nutrition</a>
+          <span class="sep">&bull;</span>
+          <a href="collaborations.html">Collaborations</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Collaboration Showcase Modal -->
+  <div class="collab-modal" id="collabModal">
+    <div class="collab-modal-card">
+      <button class="collab-modal-close" id="collabModalClose" aria-label="Close Modal">&times;</button>
+      <div id="collabModalBody">
+        <!-- Dynamically rendered -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

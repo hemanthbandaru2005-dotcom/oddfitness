@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ODD FITNESS | The Ultimate Athletic Training Club</title>
+  <meta name="description" content="Odd Fitness - Defy the odds. The premier fitness hub featuring an extensive Workout Library, evidence-based Nutrition & Diet protocols, and elite Brand Collaborations.">
+
+  <!-- Google Fonts: Bebas Neue, Permanent Marker, Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800;900&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home-page">
+
+  <header class="main-header" id="mainHeader">
+    <div class="navbar header-nav">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" id="brandLogo">
+        <span class="logo-title">ODD<span>FITNESS</span></span>
+      </a>
+
+      <!-- Multi-Page Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link active">HOME</a>
+        <a href="building-strength.html" class="nav-link">BUILDING STRENGTH</a>
+        <a href="workouts.html" class="nav-link">WORKOUT LIBRARY</a>
+        <a href="nutrition.html" class="nav-link">NUTRITIONS &amp; DIET</a>
+        <a href="collaborations.html" class="nav-link">COLLABORATIONS</a>
+        <div class="mobile-nav-login-wrap">
+          <a href="portal.html" class="btn-mobile-nav-login" id="mobileNavLoginBtn">
+            <span class="login-icon">🔒</span>
+            <span class="login-text">LOGIN</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Right Corner: Login / Client Portal -->
+      <div class="header-right-actions">
+        <a href="portal.html" class="btn-header-login" id="headerLoginBtn">
+          <span class="login-icon">🔒</span>
+          <span class="login-text" id="headerLoginText">LOGIN</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+          <span>☰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HOME SECTION: ONLY HERO SECTION (FULL UN-CROPPED IMAGE, NO TORN DESIGN)
+       ========================================================================== -->
+  <main>
+    <section class="hero-section" id="home">
+      <!-- Full Bleed Hero Image Covering 100% of Viewport on Laptop and Mobile -->
+      <picture class="hero-picture">
+        <source media="(max-width: 768px)" srcset="assets/images/hero-mobile.png">
+        <img src="assets/images/hero-desktop.png" alt="ODD FITNESS" class="hero-cover-img">
+      </picture>
+
+      <!-- Social Media Floating Buttons (Instagram Profile, Instagram Channel, YouTube) -->
+      <div class="hero-social-dock" aria-label="Social Media Links">
+        <a href="https://www.instagram.com/oddd.lifts?cplk=MTRiZTBnN3hzaHpoeg==" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="hero-social-btn ig-btn" 
+           aria-label="Instagram Profile @oddd.lifts"
+           title="Instagram: @oddd.lifts">
+          <svg class="social-svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span class="social-tooltip">@oddd.lifts</span>
+        </a>
+
+        <a href="https://www.instagram.com/channel/AbYLJkc37Na3NO6O/" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="hero-social-btn ig-channel-btn" 
+           aria-label="Instagram Broadcast Channel"
+           title="Instagram Channel">
+          <svg class="social-svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="15" height="15" rx="4" ry="4"></rect>
+            <circle cx="9.5" cy="10.5" r="3"></circle>
+            <circle cx="13.5" cy="6.5" r="0.6" fill="currentColor"></circle>
+            <path d="M18.5 7.5a4 4 0 0 1 0 6"></path>
+            <path d="M21 5a8 8 0 0 1 0 11"></path>
+          </svg>
+          <span class="social-tooltip">IG Channel</span>
+        </a>
+
+        <a href="https://youtube.com/@flimingmohdsaif?si=20NidEXqz8Mhj0Ew" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="hero-social-btn yt-btn" 
+           aria-label="YouTube Channel @flimingmohdsaif"
+           title="YouTube: @flimingmohdsaif">
+          <svg class="social-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          <span class="social-tooltip">YouTube</span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>

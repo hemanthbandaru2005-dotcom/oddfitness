@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building Strength | ODD FITNESS</title>
+  <meta name="description" content="Master progressive overload, biomechanical bar path efficiency, and neuromuscular power protocols at Odd Fitness.">
+
+  <!-- Google Fonts: Bebas Neue, Permanent Marker, Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800;900&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="navbar header-nav">
+      <a href="index.html" class="brand-logo" id="brandLogo">
+        <span class="logo-title">ODD<span>FITNESS</span></span>
+      </a>
+
+      <!-- Multi-Page Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="building-strength.html" class="nav-link active">BUILDING STRENGTH</a>
+        <a href="workouts.html" class="nav-link">WORKOUT LIBRARY</a>
+        <a href="nutrition.html" class="nav-link">NUTRITIONS &amp; DIET</a>
+        <a href="collaborations.html" class="nav-link">COLLABORATIONS</a>
+        <div class="mobile-nav-login-wrap">
+          <a href="portal.html" class="btn-mobile-nav-login" id="mobileNavLoginBtn">
+            <span class="login-icon">🔒</span>
+            <span class="login-text">LOGIN</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Right Corner: Login / Client Portal -->
+      <div class="header-right-actions">
+        <a href="portal.html" class="btn-header-login" id="headerLoginBtn">
+          <span class="login-icon">🔒</span>
+          <span class="login-text" id="headerLoginText">LOGIN</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+          <span>☰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         DEDICATED MULTI-PAGE: BUILDING STRENGTH
+         ========================================================================== -->
+    <section class="building-strength-section" style="padding-top: 3.5rem;">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="strength-header-block">
+          <div class="strength-header-left">
+            <span class="brush-script red-accent section-script-subtitle">Foundation of Power</span>
+            <h1 class="title-condensed section-bold-title">BUILDING STRENGTH</h1>
+          </div>
+          <p class="strength-header-desc">
+            Defying the odds demands progressive overload, biomechanical precision, and unrelenting dedication. Our strength protocols are engineered for athletes who prioritize measurable power, structural density, and functional muscle.
+          </p>
+        </div>
+
+        <!-- 4 Core Strength Pillars -->
+        <div class="strength-pillars-grid">
+          <!-- Pillar 1 -->
+          <div class="strength-pillar-card">
+            <div class="pillar-number">01</div>
+            <div class="pillar-icon">🏋️‍♂️</div>
+            <h3 class="pillar-title">PROGRESSIVE OVERLOAD</h3>
+            <p class="pillar-text">
+              Systematic incremental loading with calibrated RPE auto-regulation to stimulate continuous muscle cross-sectional growth and bone mineral density.
+            </p>
+            <div class="pillar-tag">Compound Anchors: Squat • Bench • Deadlift</div>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="strength-pillar-card highlight-card">
+            <div class="pillar-number">02</div>
+            <div class="pillar-icon">⚡</div>
+            <h3 class="pillar-title">NEUROMUSCULAR DRIVE</h3>
+            <p class="pillar-text">
+              Maximizing rate of force development (RFD) through explosive intent and central nervous system priming on heavy barbell compounds.
+            </p>
+            <div class="pillar-tag">Intensity Zone: 85% - 92.5% 1RM</div>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="strength-pillar-card">
+            <div class="pillar-number">03</div>
+            <div class="pillar-icon">🛡️</div>
+            <h3 class="pillar-title">STRUCTURAL RESILIENCE</h3>
+            <p class="pillar-text">
+              Targeted isometric holds, rotational core bracing, and tendon loading protocols that build injury-resistant joints capable of absorbing massive force.
+            </p>
+            <div class="pillar-tag">Joint Integrity &amp; Connective Density</div>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="strength-pillar-card">
+            <div class="pillar-number">04</div>
+            <div class="pillar-icon">🔄</div>
+            <h3 class="pillar-title">AUTOREGULATION &amp; DELOAD</h3>
+            <p class="pillar-text">
+              Strategically timed microcycles and deload weeks to eliminate systemic central nervous system fatigue and supercompensate athletic performance.
+            </p>
+            <div class="pillar-tag">Recovery Cycles: 4:1 Mesocycles</div>
+          </div>
+        </div>
+
+        <!-- Interactive 1-Rep Max & Training Zones Calculator -->
+        <div class="strength-calc-box">
+          <div class="strength-calc-header">
+            <div>
+              <span class="brush-script red-accent" style="font-size: 1.6rem;">Biomechanical Calculator</span>
+              <h3 class="title-condensed" style="font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: 1px;">STRENGTH 1RM &amp; LOAD ESTIMATOR</h3>
+              <p style="color: #94a3b8; font-size: 0.95rem;">Enter your working set load and reps to compute your estimated 1-Rep Max and optimal training zones.</p>
+            </div>
+          </div>
+
+          <div class="strength-calc-form">
+            <div class="calc-input-group">
+              <label for="strengthLift">Core Compound Movement</label>
+              <select id="strengthLift">
+                <option value="squat" selected>Barbell Back Squat</option>
+                <option value="bench">Flat Barbell Bench Press</option>
+                <option value="deadlift">Conventional Deadlift</option>
+                <option value="ohp">Standing Overhead Press</option>
+              </select>
+            </div>
+
+            <div class="calc-input-group">
+              <label for="strengthWeight">Weight Lifted (KG)</label>
+              <input type="number" id="strengthWeight" value="100" min="20" max="400">
+            </div>
+
+            <div class="calc-input-group">
+              <label for="strengthReps">Completed Reps (1 - 10)</label>
+              <input type="number" id="strengthReps" value="5" min="1" max="10">
+            </div>
+
+            <div class="calc-input-group" style="display: flex; align-items: flex-end;">
+              <button type="button" class="btn-hero-red" id="calcStrengthBtn" style="width: 100%; justify-content: center; padding: 0.85rem; font-size: 1.05rem;">
+                <span>CALCULATE MATRIX ↗</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Calculated Output Badges -->
+          <div class="strength-results-grid" id="strengthResultsGrid">
+            <div class="strength-result-card prime">
+              <span class="res-label">ESTIMATED 1-REP MAX</span>
+              <div class="res-val" id="res1RM">116.7 <span class="unit">KG</span></div>
+              <span class="res-sub">100% Theoretical Peak Capacity</span>
+            </div>
+            <div class="strength-result-card">
+              <span class="res-label">HEAVY STRENGTH (90%)</span>
+              <div class="res-val" id="res90">105.0 <span class="unit">KG</span></div>
+              <span class="res-sub">3-5 Heavy Reps (Strength Anchor)</span>
+            </div>
+            <div class="strength-result-card">
+              <span class="res-label">HYPERTROPHY ZONE (80%)</span>
+              <div class="res-val" id="res80">93.3 <span class="unit">KG</span></div>
+              <span class="res-sub">6-10 Reps (Muscle Density)</span>
+            </div>
+            <div class="strength-result-card">
+              <span class="res-label">POWER / SPEED (70%)</span>
+              <div class="res-val" id="res70">81.7 <span class="unit">KG</span></div>
+              <span class="res-sub">Dynamic Effort &amp; Bar Speed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section CTA Strip -->
+        <div class="strength-cta-strip">
+          <div class="strength-cta-text">
+            <h4>READY TO ELEVATE YOUR STRENGTH?</h4>
+            <p>Access our comprehensive movement tutorials, warm-up sequences, and calibrated training routines.</p>
+          </div>
+          <div class="strength-cta-actions">
+            <a href="workouts.html" class="btn-hero-red">
+              <span>EXPLORE WORKOUT LIBRARY ↗</span>
+            </a>
+            <a href="nutrition.html" class="btn-hero-outline">
+              <span>NUTRITION FOR STRENGTH</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sleek Minimal Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-bottom-bar">
+        <a href="index.html" class="brand-logo footer-brand">
+          <span class="logo-title">ODD<span>FITNESS</span></span>
+        </a>
+        <div class="footer-copy">
+          &copy; 2026 ODD FITNESS. All rights reserved.
+        </div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <span class="sep">•</span>
+          <a href="#">Terms of Service</a>
+          <span class="sep">•</span>
+          <a href="#">Safety Rules</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

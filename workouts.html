@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workout Library | ODD FITNESS</title>
+  <meta name="description" content="Odd Fitness Workout Library - Calibrated exercise movements, Olympic weightlifting progressions, HIIT circuits, and mobility routines with biomechanical cues.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800;900&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="workouts-page">
+
+  <!-- Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="navbar header-nav">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-title">ODD<span>FITNESS</span></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="building-strength.html" class="nav-link">BUILDING STRENGTH</a>
+        <a href="workouts.html" class="nav-link active">WORKOUT LIBRARY</a>
+        <a href="nutrition.html" class="nav-link">NUTRITIONS &amp; DIET</a>
+        <a href="collaborations.html" class="nav-link">COLLABORATIONS</a>
+        <div class="mobile-nav-login-wrap">
+          <a href="portal.html" class="btn-mobile-nav-login" id="mobileNavLoginBtn">
+            <span class="login-icon">🔒</span>
+            <span class="login-text">LOGIN</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Right Corner: Login / Client Portal -->
+      <div class="header-right-actions">
+        <a href="portal.html" class="btn-header-login" id="headerLoginBtn">
+          <span class="login-icon">🔒</span>
+          <span class="login-text" id="headerLoginText">LOGIN</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+          <span>☰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- WORKOUT LIBRARY (Direct Content - No Duplicate Home Hero) -->
+  <main>
+    <section class="workout-library-section" style="padding-top: 3.5rem;">
+      <div class="container">
+        <!-- Title Block Matching Reference Visual -->
+        <div class="library-header-row">
+          <div>
+            <span class="brush-script red-accent section-script-subtitle">Build your</span>
+            <h1 class="title-condensed section-bold-title">WORKOUT LIBRARY</h1>
+          </div>
+          <p style="color: #64748b; max-width: 460px; font-size: 0.95rem;">
+            Over 250 calibrated movement tutorials. Click any workout card below to unlock complete biomechanical cues, rep ranges, muscle activation maps, and technique breakdowns.
+          </p>
+        </div>
+
+        <!-- Search & Filters -->
+        <div class="library-toolbar">
+          <div class="library-filter-tabs">
+            <button class="filter-tab-btn active" data-filter="all">ALL WORKOUTS</button>
+            <button class="filter-tab-btn" data-filter="strength">STRENGTH &amp; POWER</button>
+            <button class="filter-tab-btn" data-filter="cardio">CARDIO &amp; CYCLE</button>
+            <button class="filter-tab-btn" data-filter="crossfit">CROSSFIT &amp; HIIT</button>
+            <button class="filter-tab-btn" data-filter="mobility">MIND &amp; MOBILITY</button>
+          </div>
+          <div class="workout-search-box">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+            <input type="text" id="workoutSearchInput" placeholder="Filter by movement or muscle...">
+          </div>
+        </div>
+
+        <!-- Workout Cards Grid -->
+        <div class="programs-grid" id="workoutsGrid">
+          <!-- 1. STRENGTH & ENDURANCE -->
+          <div class="program-card" data-workout="strength" data-category="strength">
+            <img src="assets/images/strength-endurance.jpg" alt="Strength & Endurance Workout" class="program-card-img" loading="lazy">
+            <div class="program-card-overlay">
+              <div class="program-card-content">
+                <h3 class="program-card-title">STRENGTH &amp; ENDURANCE</h3>
+                <span class="program-card-arrow">↗</span>
+                <div class="program-card-details-peek">Olympic Lifting • Calisthenics • Rings</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. INDOOR CYCLE -->
+          <div class="program-card" data-workout="cycle" data-category="cardio">
+            <img src="assets/images/indoor-cycle.jpg" alt="Indoor Cycle Spin Training" class="program-card-img" loading="lazy">
+            <div class="program-card-overlay">
+              <div class="program-card-content">
+                <h3 class="program-card-title">INDOOR CYCLE</h3>
+                <span class="program-card-arrow">↗</span>
+                <div class="program-card-details-peek">Rhythm Spin • Wattbike • Cadence Intervals</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. HIGH INTENSITY -->
+          <div class="program-card" data-workout="intensity" data-category="crossfit">
+            <img src="assets/images/high-intensity.jpg" alt="High Intensity HIIT Workout" class="program-card-img" loading="lazy">
+            <div class="program-card-overlay">
+              <div class="program-card-content">
+                <h3 class="program-card-title">HIGH INTENSITY</h3>
+                <span class="program-card-arrow">↗</span>
+                <div class="program-card-details-peek">Tabata Conditioning • Core Shred • Plyo</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. MIND & BODY -->
+          <div class="program-card" data-workout="mind" data-category="mobility">
+            <img src="assets/images/mind-body.jpg" alt="Mind and Body Yoga Recovery" class="program-card-img" loading="lazy">
+            <div class="program-card-overlay">
+              <div class="program-card-content">
+                <h3 class="program-card-title">MIND &amp; BODY</h3>
+                <span class="program-card-arrow">↗</span>
+                <div class="program-card-details-peek">Ashtanga Yoga • Fascia Release • Breathwork</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. CROSSFIT WORKOUT -->
+          <div class="program-card" data-workout="crossfit" data-category="crossfit">
+            <img src="assets/images/crossfit-workout.jpg" alt="CrossFit Heavy Battle Ropes" class="program-card-img" loading="lazy">
+            <div class="program-card-overlay">
+              <div class="program-card-content">
+                <h3 class="program-card-title">CROSSFIT WORKOUT</h3>
+                <span class="program-card-arrow">↗</span>
+                <div class="program-card-details-peek">Battle Ropes • Clean &amp; Jerk • Sled Push</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. WHOLE BODY FITNESS -->
+          <div class="program-card" data-workout="whole" data-category="strength cardio">
+            <img src="assets/images/whole-body.jpg" alt="Whole Body Fitness Training" class="program-card-img" loading="lazy">
+            <div class="program-card-overlay">
+              <div class="program-card-content">
+                <h3 class="program-card-title">WHOLE BODY FITNESS</h3>
+                <span class="program-card-arrow">↗</span>
+                <div class="program-card-details-peek">Kinetic Chains • Functional Conditioning</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Training Split Methodology -->
+    <section style="background: #0d1015; padding: 5rem 0; color: #fff; border-top: 1px solid rgba(255,255,255,0.08);">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 3.5rem;">
+          <span class="brush-script red-accent" style="font-size: 2rem;">Periodization Principles</span>
+          <h2 class="title-condensed" style="font-size: clamp(2.2rem, 5vw, 3.6rem);">HOW TO STRUCTURE YOUR ROUTINE</h2>
+        </div>
+
+        <div class="periodization-grid">
+          <div style="background: #141820; border: 1px solid rgba(255,255,255,0.08); padding: 2rem; border-radius: 8px;">
+            <div style="font-family: var(--font-display); font-size: 2rem; color: var(--primary-red); margin-bottom: 0.4rem;">3-DAY FULL BODY</div>
+            <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+              Ideal for athletes balancing heavy work weeks. Focuses on squat, bench, deadlift compound movements with 48 hours recovery between sessions.
+            </p>
+            <div style="font-size: 0.8rem; color: #94a3b8;">Frequency: Mon / Wed / Fri</div>
+          </div>
+
+          <div style="background: #141820; border: 1px solid var(--primary-red); padding: 2rem; border-radius: 8px; box-shadow: 0 10px 30px rgba(255,43,43,0.15);">
+            <div style="font-family: var(--font-display); font-size: 2rem; color: #fff; margin-bottom: 0.4rem;">4-DAY UPPER / LOWER</div>
+            <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+              The optimal sweet spot for natural hypertrophy and strength. Hits each muscle group twice weekly with dedicated volume and intensity days.
+            </p>
+            <div style="font-size: 0.8rem; color: var(--primary-red); font-weight: 700;">Frequency: Mon / Tue &amp; Thu / Fri</div>
+          </div>
+
+          <div style="background: #141820; border: 1px solid rgba(255,255,255,0.08); padding: 2rem; border-radius: 8px;">
+            <div style="font-family: var(--font-display); font-size: 2rem; color: var(--primary-red); margin-bottom: 0.4rem;">6-DAY PUSH / PULL / LEGS</div>
+            <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+              High-volume bodybuilding &amp; athletic split for advanced lifters. Requires strict adherence to calorie surplus and 8+ hours sleep.
+            </p>
+            <div style="font-size: 0.8rem; color: #94a3b8;">Frequency: 6 Days On / 1 Day Rest</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sleek Minimal Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-bottom-bar">
+        <a href="index.html" class="brand-logo footer-brand">
+          <span class="logo-title">ODD<span>FITNESS</span></span>
+        </a>
+        <div class="footer-copy">
+          &copy; 2026 ODD FITNESS. All rights reserved.
+        </div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <span class="sep">•</span>
+          <a href="#">Terms of Service</a>
+          <span class="sep">•</span>
+          <a href="#">Safety Rules</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Workout Detail Modal -->
+  <div class="modal-overlay" id="workoutModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <span class="modal-title">WORKOUT GUIDE</span>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modalWorkoutContent">
+        <!-- Injected via js/main.js -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

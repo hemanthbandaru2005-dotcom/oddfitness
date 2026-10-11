@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutritions &amp; Diet | ODD FITNESS</title>
+  <meta name="description" content="Odd Fitness Nutrition & Diet Lab - Dynamic macro calculator, clean athletic meal prep guidelines, and sports nutrition blueprints for mass gain and fat shredding.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800;900&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="nutrition-page">
+
+  <!-- Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="navbar header-nav">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-title">ODD<span>FITNESS</span></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="building-strength.html" class="nav-link">BUILDING STRENGTH</a>
+        <a href="workouts.html" class="nav-link">WORKOUT LIBRARY</a>
+        <a href="nutrition.html" class="nav-link active">NUTRITIONS &amp; DIET</a>
+        <a href="collaborations.html" class="nav-link">COLLABORATIONS</a>
+        <div class="mobile-nav-login-wrap">
+          <a href="portal.html" class="btn-mobile-nav-login" id="mobileNavLoginBtn">
+            <span class="login-icon">🔒</span>
+            <span class="login-text">LOGIN</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Right Corner: Login / Client Portal -->
+      <div class="header-right-actions">
+        <a href="portal.html" class="btn-header-login" id="headerLoginBtn">
+          <span class="login-icon">🔒</span>
+          <span class="login-text" id="headerLoginText">LOGIN</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+          <span>☰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- NUTRITIONS & DIET (Direct Content - No Duplicate Home Hero) -->
+  <main>
+    <section class="nutrition-section" style="padding-top: 3.5rem;">
+      <div class="container">
+        <!-- Title & Intro Grid -->
+        <div class="nutrition-intro-grid">
+          <div class="nutrition-img-frame">
+            <img src="assets/images/nutrition-diet.jpg" alt="Athletic Sports Nutrition Meal Prep">
+            <span class="nutrition-tag-badge">SPORTS NUTRITION LAB</span>
+          </div>
+
+          <div class="nutrition-text-block">
+            <span class="brush-script red-accent section-script-subtitle">Fuel The Machine</span>
+            <h1 class="title-condensed section-bold-title" style="color: #fff; font-size: clamp(2.4rem, 6.5vw, 4.6rem);">NUTRITIONS &amp; DIET</h1>
+            <p>
+              Your training stimulus is only as effective as the fuel you feed it. Odd Fitness pairs your heavy compound sessions with individualized macronutrient timing, clean whole-food density, and certified sports nutrition consultations.
+            </p>
+
+            <div class="nutrition-principles-list">
+              <div class="principle-item">
+                <span class="principle-icon">⚡</span>
+                <div>
+                  <div class="principle-title">Precision Macros</div>
+                  <div class="principle-sub">Gram-exact protein &amp; carbohydrate loading tailored to your lean mass.</div>
+                </div>
+              </div>
+              <div class="principle-item">
+                <span class="principle-icon">🥗</span>
+                <div>
+                  <div class="principle-title">Whole Food Integrity</div>
+                  <div class="principle-sub">Prioritizing bioavailable micronutrients, healthy omegas &amp; fiber.</div>
+                </div>
+              </div>
+              <div class="principle-item">
+                <span class="principle-icon">⏱️</span>
+                <div>
+                  <div class="principle-title">Nutrient Timing</div>
+                  <div class="principle-sub">Glycogen replenishing intra/post workout windows for rapid recovery.</div>
+                </div>
+              </div>
+              <div class="principle-item">
+                <span class="principle-icon">💧</span>
+                <div>
+                  <div class="principle-title">Hydration &amp; Minerals</div>
+                  <div class="principle-sub">Essential sodium, magnesium, and potassium replenishment protocols.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NUTRITION LAB - 3-in-1 Dedicated Fitness Calculator -->
+        <div class="nutrition-lab-box" id="nutritionLab">
+          <!-- Lab Header -->
+          <div class="nutrition-lab-header">
+            <div class="nutrition-lab-badge">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="4"></rect>
+                <path d="m8 14 3-3 2.5 2.5L16 10"></path>
+                <circle cx="8" cy="14" r="1" fill="currentColor"></circle>
+                <circle cx="16" cy="10" r="1" fill="currentColor"></circle>
+              </svg>
+            </div>
+            <div class="nutrition-lab-header-text">
+              <h2 class="nutrition-lab-title">NUTRITION LAB</h2>
+              <p class="nutrition-lab-subtitle">Your fitness, measured smarter.</p>
+            </div>
+          </div>
+
+          <!-- 3 Dedicated Calculator Selectors (Tabs) -->
+          <div class="nutrition-lab-tabs" role="tablist">
+            <!-- Tab 1: BMI -->
+            <button class="nutrition-tab-btn active" data-tab="bmi" role="tab" aria-selected="true" id="tabBtnBmi">
+              <div class="tab-icon">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 14v-4"></path>
+                  <path d="M3.34 17a10 10 0 1 1 17.32 0"></path>
+                  <circle cx="12" cy="14" r="2"></circle>
+                </svg>
+              </div>
+              <div class="tab-meta">
+                <span class="tab-title">BMI</span>
+                <span class="tab-sub">Body metrics</span>
+              </div>
+            </button>
+
+            <!-- Tab 2: Protein -->
+            <button class="nutrition-tab-btn" data-tab="protein" role="tab" aria-selected="false" id="tabBtnProtein">
+              <div class="tab-icon">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 11c0 2.76-2.24 5-5 5s-5-2.24-5-5 2.24-5 5-5 5 2.24 5 5z"></path>
+                  <path d="M10 9a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"></path>
+                  <path d="M14 6.5c1.8.8 3.5 2.2 4.5 4 1.5 2.8 1.2 6.5-1 9-2 2.2-5 3-8 2.5"></path>
+                </svg>
+              </div>
+              <div class="tab-meta">
+                <span class="tab-title">Protein</span>
+                <span class="tab-sub">Daily intake</span>
+              </div>
+            </button>
+
+            <!-- Tab 3: Calories -->
+            <button class="nutrition-tab-btn" data-tab="calories" role="tab" aria-selected="false" id="tabBtnCalories">
+              <div class="tab-icon">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+                </svg>
+              </div>
+              <div class="tab-meta">
+                <span class="tab-title">Calories</span>
+                <span class="tab-sub">Energy needs</span>
+              </div>
+            </button>
+          </div>
+
+          <!-- Section Intro Lead Text -->
+          <div class="nutrition-toolkit-intro">
+            <h4 class="nutrition-toolkit-heading">YOUR NUTRITION TOOLKIT</h4>
+            <p class="nutrition-toolkit-sub">
+              Three dedicated calculators, easy-to-read results, progress visuals and a consistent premium fitness aesthetic.
+            </p>
+          </div>
+
+          <!-- ==============================================
+               PANEL 1: BMI CALCULATOR
+               ============================================== -->
+          <div class="nutrition-calc-panel active" id="panelBmi" role="tabpanel">
+            <div class="calc-inputs-grid">
+              <div class="calc-field">
+                <label for="bmiWeight">Body Weight (kg)</label>
+                <input type="number" id="bmiWeight" value="74" min="30" max="220" step="0.5">
+              </div>
+              <div class="calc-field">
+                <label for="bmiHeight">Height (cm)</label>
+                <input type="number" id="bmiHeight" value="175" min="110" max="230" step="1">
+              </div>
+              <div class="calc-field">
+                <label for="bmiGender">Gender</label>
+                <select id="bmiGender">
+                  <option value="male" selected>Male (Athletic Model)</option>
+                  <option value="female">Female (Athletic Model)</option>
+                </select>
+              </div>
+              <div class="calc-field">
+                <label for="bmiAge">Age (Years)</label>
+                <input type="number" id="bmiAge" value="25" min="14" max="85">
+              </div>
+            </div>
+
+            <div class="calc-action-row">
+              <button class="btn-hero-red" id="calcBmiBtn">
+                <span>COMPUTE BMI METRICS ↗</span>
+              </button>
+            </div>
+
+            <!-- BMI Interactive Results View -->
+            <div class="calc-results-wrapper">
+              <div class="bmi-hero-result-card">
+                <div class="bmi-main-val-group">
+                  <span class="res-badge-label">BODY MASS INDEX</span>
+                  <div class="bmi-score-number" id="bmiScoreVal">24.2</div>
+                  <div class="bmi-status-pill normal" id="bmiStatusPill">NORMAL WEIGHT (HEALTHY)</div>
+                </div>
+
+                <div class="bmi-gauge-block">
+                  <div class="bmi-gauge-scale">
+                    <div class="gauge-seg under" title="Underweight (&lt; 18.5)">
+                      <span>&lt; 18.5</span>
+                    </div>
+                    <div class="gauge-seg normal" title="Normal (18.5 - 24.9)">
+                      <span>18.5 - 24.9</span>
+                    </div>
+                    <div class="gauge-seg over" title="Overweight (25 - 29.9)">
+                      <span>25 - 29.9</span>
+                    </div>
+                    <div class="gauge-seg obese" title="Obese (30+)">
+                      <span>30+</span>
+                    </div>
+                  </div>
+                  <!-- Dynamic Pointer Marker -->
+                  <div class="bmi-pointer" id="bmiPointer" style="left: 48%;">
+                    <div class="pointer-arrow">▲</div>
+                    <span class="pointer-text" id="pointerText">24.2</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- BMI Ancillary Stats -->
+              <div class="calc-stats-subgrid">
+                <div class="calc-stat-pill">
+                  <span class="stat-lbl">HEALTHY WEIGHT RANGE</span>
+                  <span class="stat-num" id="bmiHealthyWeight">56.7 – 76.3 <span class="unit">KG</span></span>
+                  <span class="stat-note">Target for 18.5–24.9 BMI zone</span>
+                </div>
+                <div class="calc-stat-pill">
+                  <span class="stat-lbl">ESTIMATED BODY FAT</span>
+                  <span class="stat-num" id="bmiEstFat">~15.2 <span class="unit">%</span></span>
+                  <span class="stat-note">Deurenberg formula</span>
+                </div>
+                <div class="calc-stat-pill">
+                  <span class="stat-lbl">PONDERAL DENSITY</span>
+                  <span class="stat-num" id="bmiPonderal">13.8 <span class="unit">KG/M³</span></span>
+                  <span class="stat-note">Height-to-mass volumetric ratio</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==============================================
+               PANEL 2: PROTEIN CALCULATOR
+               ============================================== -->
+          <div class="nutrition-calc-panel" id="panelProtein" role="tabpanel" style="display: none;">
+            <div class="calc-inputs-grid">
+              <div class="calc-field">
+                <label for="proWeight">Body Weight (kg)</label>
+                <input type="number" id="proWeight" value="75" min="30" max="220" step="0.5">
+              </div>
+              <div class="calc-field">
+                <label for="proGoal">Primary Objective</label>
+                <select id="proGoal">
+                  <option value="hypertrophy" selected>Hypertrophy &amp; Lean Mass (2.2g/kg)</option>
+                  <option value="strength">Heavy Strength &amp; Power (2.0g/kg)</option>
+                  <option value="cut">Fat Cut &amp; Muscle Sparing (2.4g/kg)</option>
+                  <option value="endurance">Endurance &amp; Stamina (1.6g/kg)</option>
+                  <option value="maintain">General Fitness &amp; Health (1.4g/kg)</option>
+                </select>
+              </div>
+              <div class="calc-field">
+                <label for="proIntensity">Training Frequency</label>
+                <select id="proIntensity">
+                  <option value="elite" selected>5–6 Days Intense Calisthenics / Lifting</option>
+                  <option value="moderate">3–4 Days Strength Training</option>
+                  <option value="light">1–2 Days Casual Exercise</option>
+                </select>
+              </div>
+              <div class="calc-field">
+                <label for="proDietType">Dietary Style</label>
+                <select id="proDietType">
+                  <option value="omnivore" selected>Standard Omnivore (Meat, Eggs, Dairy)</option>
+                  <option value="pescatarian">Pescatarian (Fish, Eggs, Dairy)</option>
+                  <option value="plant">100% Plant-Based / Vegan</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="calc-action-row">
+              <button class="btn-hero-red" id="calcProBtn">
+                <span>COMPUTE PROTEIN TARGET ↗</span>
+              </button>
+            </div>
+
+            <!-- Protein Output View -->
+            <div class="calc-results-wrapper">
+              <div class="protein-hero-card">
+                <div class="pro-main-display">
+                  <span class="res-badge-label">OPTIMAL DAILY INTAKE</span>
+                  <div class="pro-val-row">
+                    <span class="pro-big-number" id="proDailyGrams">165</span>
+                    <span class="pro-big-unit">GRAMS / DAY</span>
+                  </div>
+                  <div class="pro-ratio-tag" id="proRatioTag">2.2g per kg body weight • 660 kcal</div>
+                </div>
+
+                <!-- Meal Distribution Per Day -->
+                <div class="meal-split-card">
+                  <span class="meal-split-title">MEAL DISTRIBUTION BREAKDOWN</span>
+                  <div class="meal-split-row">
+                    <div class="meal-split-box">
+                      <span class="box-meals">3 MEALS</span>
+                      <strong class="box-grams" id="split3Meals">55g</strong>
+                      <span class="box-sub">per meal</span>
+                    </div>
+                    <div class="meal-split-box">
+                      <span class="box-meals">4 MEALS</span>
+                      <strong class="box-grams" id="split4Meals">41g</strong>
+                      <span class="box-sub">per meal</span>
+                    </div>
+                    <div class="meal-split-box">
+                      <span class="box-meals">5 MEALS</span>
+                      <strong class="box-grams" id="split5Meals">33g</strong>
+                      <span class="box-sub">per meal</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Whole Food Equivalents -->
+              <div class="food-equivs-block">
+                <span class="food-equivs-title">WHOLE FOOD TARGET EQUIVALENTS (APPROX)</span>
+                <div class="food-equivs-grid">
+                  <div class="food-card">
+                    <span class="food-icon">🍗</span>
+                    <strong class="food-val" id="eqChicken">~530g</strong>
+                    <span class="food-name">Chicken Breast</span>
+                  </div>
+                  <div class="food-card">
+                    <span class="food-icon">🥚</span>
+                    <strong class="food-val" id="eqEggs">~26 Eggs</strong>
+                    <span class="food-name">Whole Eggs</span>
+                  </div>
+                  <div class="food-card">
+                    <span class="food-icon">🥩</span>
+                    <strong class="food-val" id="eqBeef">~635g</strong>
+                    <span class="food-name">Sirloin Steak</span>
+                  </div>
+                  <div class="food-card">
+                    <span class="food-icon">🥤</span>
+                    <strong class="food-val" id="eqWhey">~6.6 Scoops</strong>
+                    <span class="food-name">Whey Isolate</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==============================================
+               PANEL 3: CALORIES CALCULATOR
+               ============================================== -->
+          <div class="nutrition-calc-panel" id="panelCalories" role="tabpanel" style="display: none;">
+            <div class="calc-inputs-grid">
+              <div class="calc-field">
+                <label for="calWeight">Body Weight (kg)</label>
+                <input type="number" id="calWeight" value="75" min="30" max="220" step="0.5">
+              </div>
+              <div class="calc-field">
+                <label for="calHeight">Height (cm)</label>
+                <input type="number" id="calHeight" value="175" min="110" max="230" step="1">
+              </div>
+              <div class="calc-field">
+                <label for="calAge">Age (Years)</label>
+                <input type="number" id="calAge" value="25" min="14" max="85">
+              </div>
+              <div class="calc-field">
+                <label for="calActivity">Weekly Activity Level</label>
+                <select id="calActivity">
+                  <option value="1.2">Sedentary (Desk Job, Minimal Activity)</option>
+                  <option value="1.375">Light Activity (1–2 Training Days/Wk)</option>
+                  <option value="1.55" selected>Moderately Active (3–5 Heavy Days/Wk)</option>
+                  <option value="1.725">Very Active (6–7 Intense Sessions/Wk)</option>
+                  <option value="1.9">Elite Competitive Athlete (2x / Day)</option>
+                </select>
+              </div>
+              <div class="calc-field" style="grid-column: 1 / -1;">
+                <label for="calGoal">Target Energy Direction</label>
+                <select id="calGoal">
+                  <option value="surplus" selected>Lean Hypertrophy Surplus (+350 kcal / day)</option>
+                  <option value="cut">Fat Stripping Deficit (-500 kcal / day)</option>
+                  <option value="maintain">True Maintenance / Body Recomposition (0 kcal)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="calc-action-row">
+              <button class="btn-hero-red" id="calcCalBtn">
+                <span>COMPUTE ENERGY TARGET ↗</span>
+              </button>
+            </div>
+
+            <!-- Calories Output Cards -->
+            <div class="calc-results-wrapper">
+              <div class="calories-metrics-quad">
+                <div class="cal-quad-card highlight">
+                  <span class="quad-label">DAILY TARGET INTAKE</span>
+                  <div class="quad-number" id="calTargetVal">2,850</div>
+                  <span class="quad-unit">kcal / day</span>
+                  <span class="quad-delta" id="calDeltaBadge">+350 kcal Surplus</span>
+                </div>
+                <div class="cal-quad-card">
+                  <span class="quad-label">MAINTENANCE (TDEE)</span>
+                  <div class="quad-number" id="calTdeeVal">2,500</div>
+                  <span class="quad-unit">kcal / day</span>
+                  <span class="quad-sub">Neutral energy balance</span>
+                </div>
+                <div class="cal-quad-card">
+                  <span class="quad-label">BASAL METABOLIC (BMR)</span>
+                  <div class="quad-number" id="calBmrVal">1,720</div>
+                  <span class="quad-unit">kcal / day</span>
+                  <span class="quad-sub">Mifflin-St Jeor base burn</span>
+                </div>
+                <div class="cal-quad-card">
+                  <span class="quad-label">WEEKLY SURPLUS/DEFICIT</span>
+                  <div class="quad-number" id="calWeeklyVal">+2,450</div>
+                  <span class="quad-unit">kcal / week</span>
+                  <span class="quad-sub">Predicted weight trend</span>
+                </div>
+              </div>
+
+              <!-- Macro Split Breakdown for the Calories -->
+              <div class="cal-macros-split-row">
+                <div class="split-col">
+                  <span class="split-name">PROTEIN (25%)</span>
+                  <div class="split-grams" id="calSplitPro">178 <span class="unit">g</span></div>
+                  <span class="split-cals" id="calSplitProCals">712 kcal</span>
+                </div>
+                <div class="split-col">
+                  <span class="split-name">COMPLEX CARBS (50%)</span>
+                  <div class="split-grams" id="calSplitCarb">356 <span class="unit">g</span></div>
+                  <span class="split-cals" id="calSplitCarbCals">1,425 kcal</span>
+                </div>
+                <div class="split-col">
+                  <span class="split-name">HEALTHY FATS (25%)</span>
+                  <div class="split-grams" id="calSplitFat">79 <span class="unit">g</span></div>
+                  <span class="split-cals" id="calSplitFatCals">713 kcal</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Curated Nutrition Meal Blueprints -->
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+          <span class="brush-script red-accent" style="font-size: 2rem;">Pre-Engineered Protocols</span>
+          <h3 class="title-condensed" style="font-size: 3.4rem;">POPULAR DIET BLUEPRINTS</h3>
+        </div>
+
+        <div class="diet-blueprints-grid" id="dietBlueprintsGrid" style="margin-bottom: 4.5rem;">
+          <!-- Blueprint 1 -->
+          <div class="blueprint-card">
+            <span class="blueprint-pill">HYPERTROPHY BULK</span>
+            <h4 class="blueprint-name">THE MASS TITAN</h4>
+            <p class="blueprint-desc">Engineered for clean mass accretion with minimal visceral fat gain. Sustained energy for double sessions.</p>
+            <ul class="blueprint-meals-list">
+              <li>🍳 <strong>Breakfast:</strong> 4 Pasture Eggs, Oats, Blueberries &amp; Almonds</li>
+              <li>🥩 <strong>Lunch:</strong> 220g Sirloin Steak, Sweet Potato, Asparagus</li>
+              <li>🍌 <strong>Pre/Post:</strong> Whey Isolate, Cream of Rice &amp; Honey</li>
+              <li>🍗 <strong>Dinner:</strong> 250g Grilled Salmon, Quinoa, Mixed Greens</li>
+            </ul>
+            <button class="btn-download-blueprint" onclick="downloadDietBlueprint('The Mass Titan')">DOWNLOAD PDF BLUEPRINT ↗</button>
+          </div>
+
+          <!-- Blueprint 2 -->
+          <div class="blueprint-card" style="border-color: var(--primary-red); background: linear-gradient(180deg, #1c222c 0%, #141820 100%);">
+            <span class="blueprint-pill" style="background: var(--primary-red); color: #fff;">FAT-SHRED PROTOCOL</span>
+            <h4 class="blueprint-name">METABOLIC STRIPPER</h4>
+            <p class="blueprint-desc">High satiety, single-digit body fat target. Preserves lean tissue while mobilizing stubborn fat stores.</p>
+            <ul class="blueprint-meals-list">
+              <li>🥚 <strong>Breakfast:</strong> 5 Egg White Omelet, Spinach, Half Avocado</li>
+              <li>🥗 <strong>Lunch:</strong> 200g Lean Chicken Breast, Broccoli, Olive Oil</li>
+              <li>⚡ <strong>Snack:</strong> Odd Fitness Casein Shake &amp; Chia Seeds</li>
+              <li>🐟 <strong>Dinner:</strong> 220g White Fish / Cod, Cauliflower Rice, Greens</li>
+            </ul>
+            <button class="btn-download-blueprint" onclick="downloadDietBlueprint('Metabolic Stripper')" style="background: var(--primary-red); border-color: var(--primary-red);">DOWNLOAD PDF BLUEPRINT ↗</button>
+          </div>
+
+          <!-- Blueprint 3 -->
+          <div class="blueprint-card">
+            <span class="blueprint-pill">PLANT ATHLETE</span>
+            <h4 class="blueprint-name">VEGAN GLADIATOR</h4>
+            <p class="blueprint-desc">100% plant-based complete amino acid profile for clean stamina, zero bloating, and rapid systemic recovery.</p>
+            <ul class="blueprint-meals-list">
+              <li>🌱 <strong>Breakfast:</strong> Tofu Scramble, Sprouted Toast, Avocado</li>
+              <li>🥣 <strong>Lunch:</strong> Tempeh Bowl, Black Beans, Brown Rice, Tahini</li>
+              <li>🥜 <strong>Snack:</strong> Hemp &amp; Pea Protein Shake with Peanut Butter</li>
+              <li>🍲 <strong>Dinner:</strong> Red Lentil Dahl, Roasted Veggies, Pumpkin Seeds</li>
+            </ul>
+            <button class="btn-download-blueprint" onclick="downloadDietBlueprint('Vegan Gladiator')">DOWNLOAD PDF BLUEPRINT ↗</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Sleek Minimal Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-bottom-bar">
+        <a href="index.html" class="brand-logo footer-brand">
+          <span class="logo-title">ODD<span>FITNESS</span></span>
+        </a>
+        <div class="footer-copy">
+          &copy; 2026 ODD FITNESS. All rights reserved.
+        </div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <span class="sep">•</span>
+          <a href="#">Terms of Service</a>
+          <span class="sep">•</span>
+          <a href="#">Safety Rules</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
