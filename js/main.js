@@ -1323,28 +1323,23 @@ function initClientPortal() {
                        localStorage.getItem('odd_client_logged_in') === 'true';
     const creds = getStoredCreds();
 
-    if (isLoggedIn) {
-      loginSection.style.display = 'none';
-      dashSection.style.display = 'block';
+    if (loginSection) loginSection.style.display = 'none';
+    if (dashSection) dashSection.style.display = 'block';
 
-      // Update welcome & credential reviews
-      const dashClientTitle = document.getElementById('dashClientNameTitle');
-      const dispCurrentName = document.getElementById('dispCurrentName');
-      const secClientNameInput = document.getElementById('secClientName');
+    // Update welcome & credential reviews
+    const dashClientTitle = document.getElementById('dashClientNameTitle');
+    const dispCurrentName = document.getElementById('dispCurrentName');
+    const secClientNameInput = document.getElementById('secClientName');
 
-      if (dashClientTitle) dashClientTitle.textContent = creds.username.toUpperCase();
-      if (dispCurrentName) dispCurrentName.textContent = creds.username;
-      if (secClientNameInput) secClientNameInput.value = creds.username;
-      updateStoredPasswordDisplay();
+    if (dashClientTitle) dashClientTitle.textContent = creds.username.toUpperCase();
+    if (dispCurrentName) dispCurrentName.textContent = creds.username;
+    if (secClientNameInput) secClientNameInput.value = creds.username;
+    updateStoredPasswordDisplay();
 
-      // Render management items
-      renderPortalWorkouts();
-      renderPortalNutrition();
-      renderPortalCollabs();
-    } else {
-      loginSection.style.display = 'flex';
-      dashSection.style.display = 'none';
-    }
+    // Render management items
+    renderPortalWorkouts();
+    renderPortalNutrition();
+    renderPortalCollabs();
 
     // Refresh header login state (Strictly KEEP button as "LOGIN")
     const headerLoginBtn = document.getElementById('headerLoginBtn');
@@ -1359,8 +1354,14 @@ function initClientPortal() {
   const tabPanels = document.querySelectorAll('.portal-tab-panel');
   function switchPortalTab(targetId) {
     tabBtns.forEach(b => {
-      if (b.getAttribute('data-tab') === targetId) b.classList.add('active');
-      else b.classList.remove('active');
+      if (b.getAttribute('data-tab') === targetId) {
+        b.classList.add('active');
+        try {
+          b.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        } catch (_) {}
+      } else {
+        b.classList.remove('active');
+      }
     });
     tabPanels.forEach(p => {
       if (p.id === targetId) p.classList.add('active');

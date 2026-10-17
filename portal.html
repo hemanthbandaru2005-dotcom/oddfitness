@@ -50,60 +50,13 @@
     </div>
   </header>
 
-  <main style="padding: 3rem 0 5rem;">
+  <main class="portal-main-container">
     <div class="container">
 
       <!-- ======================================================================
-           STATE 1: LOGIN SECTION (Shown when not authenticated)
+           MANAGEMENT DASHBOARD (Direct access - login removed)
            ====================================================================== -->
-      <div id="portalLoginSection" class="portal-login-wrap">
-        <div class="portal-login-card">
-          <div class="portal-login-badge">
-            <span>🛡️</span>
-          </div>
-          <span class="brush-script red-accent" style="font-size: 1.8rem; display: block; margin-bottom: 0.2rem;">Client Authentication</span>
-          <h1 class="title-condensed" style="font-size: 2.8rem; margin-bottom: 0.8rem; color: #fff;">PORTAL ACCESS</h1>
-          <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;">
-            Log in to manage workout movements, nutrition blueprints, verified collaborations, and security credentials.
-          </p>
-
-          <form id="portalLoginForm" class="portal-form">
-            <div class="portal-field">
-              <label for="portalUser">Client Name / Username</label>
-              <input type="text" id="portalUser" placeholder="Enter your name" value="Admin" required autocomplete="username">
-            </div>
-
-            <div class="portal-field">
-              <label for="portalPassword">Security Password</label>
-              <div class="password-input-wrap">
-                <input type="password" id="portalPassword" placeholder="Enter security password" value="odd2026" required autocomplete="current-password">
-                <button type="button" class="btn-toggle-password" id="toggleLoginPasswordBtn" aria-label="Toggle password visibility">
-                  <span id="loginPasswordEyeIcon">👁️</span>
-                </button>
-              </div>
-              <span class="password-hint">Click the eye icon to make password visible</span>
-            </div>
-
-            <div class="portal-quick-creds" id="quickCredsPill" title="Click to autofill and login">
-              <span>Demo Access:</span> <strong>User:</strong> Admin &bull; <strong>Password:</strong> odd2026 <em>(Click to autofill)</em>
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem;">
-              <button type="submit" class="btn-hero-red" id="btnSubmitLogin" style="width: 100%; justify-content: center; padding: 0.9rem; font-size: 1.1rem;">
-                ENTER PORTAL <span>&rarr;</span>
-              </button>
-              <button type="button" id="btnOneClickLogin" class="btn-cancel" style="width: 100%; justify-content: center; padding: 0.75rem; font-weight: 700; border: 1px solid rgba(255,43,43,0.3); background: rgba(255,43,43,0.1); color: #fff;">
-                ⚡ ONE-CLICK INSTANT LOGIN
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <!-- ======================================================================
-           STATE 2: MANAGEMENT DASHBOARD (Shown when authenticated)
-           ====================================================================== -->
-      <div id="portalDashboardSection" class="portal-dashboard-wrap" style="display: none;">
+      <div id="portalDashboardSection" class="portal-dashboard-wrap">
         
         <!-- Dashboard Top Bar -->
         <div class="portal-dash-header">
@@ -118,7 +71,6 @@
           </div>
           <div class="portal-dash-actions">
             <a href="index.html" class="portal-action-btn secondary"><span>🌐</span> Live Website</a>
-            <button type="button" class="portal-action-btn danger" id="portalLogoutBtn"><span>🚪</span> Log Out</button>
           </div>
         </div>
 
